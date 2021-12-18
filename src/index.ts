@@ -1,11 +1,11 @@
 import Koa from 'koa'
 
-import authentication from './router/authentication'
+import connect from './router/connect'
 
 const app = new Koa()
 
-app // Authentication
-  .use(authentication.routes())
-  .use(authentication.allowedMethods())
+app // connection
+  .use(connect.routes())
+  .use(connect.allowedMethods())
 
 app.listen(8080)
