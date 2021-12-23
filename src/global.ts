@@ -1,9 +1,13 @@
 import fs from 'fs'
+import { Server } from 'socket.io'
+import Pair from './classes/Pair'
 
 const key = fs.readFileSync('../private.key')
-const rooms = new Map()
+const rooms: Map<string, Pair> = new Map()
+const io = new Server() // socket.io
 
 export {
   rooms,
-  key
+  key,
+  io
 }
