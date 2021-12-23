@@ -5,7 +5,6 @@ import { Server } from 'socket.io'
 
 function registIo (io: Server) {
   io.on('connection', (socket) => {
-    console.log('aaa')
     const token = socket.handshake.query.token as string
     const publicKey = socket.handshake.query.publicKey as string
 
